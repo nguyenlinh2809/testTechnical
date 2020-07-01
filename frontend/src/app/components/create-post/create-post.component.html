@@ -1,0 +1,33 @@
+<ng-container *ngIf="editPost; else addTemplate">
+    <div class="container">
+        <div class="form-group">
+            <label for="usr">Content:</label>
+            <input type="text" class="form-control container__input" [(ngModel)]="editPost.body">
+        </div>
+        <div class="container__button">
+            <button 
+                class="btn btn-primary" 
+                (click)="updatePost()" 
+                [disabled]="!editPost.body">
+                Update
+            </button>
+        </div>
+    </div>
+</ng-container>
+<ng-template #addTemplate>
+    <div class="container">
+        <div class="form-group">
+            <label for="usr">Content:</label>
+            <input type="text" class="form-control container__input" [(ngModel)]="post">
+        </div>
+        <div class="container__button">
+            <button 
+                class="btn btn-primary" 
+                [ngClass]="{'btn-disable': !post}"
+                (click)="createPost()" 
+                [disabled]="!post">
+                Create
+            </button>
+        </div>
+    </div>
+</ng-template>

@@ -1,0 +1,19 @@
+$color-black: #000;
+
+.container {
+    margin: 100px auto;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+
+    .container__input {
+        margin-bottom: 50px;
+    }
+
+    .btn-disable {
+        color: $color-black;
+        background: rgba(90, 170, 255, 0.6);
+        cursor: not-allowed;
+    }
+}
